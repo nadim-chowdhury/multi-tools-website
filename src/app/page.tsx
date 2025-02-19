@@ -5,7 +5,7 @@ import NewsletterSection from "@/components/home/NewsletterSection";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <HeroSection />
 
       <div className="container mx-auto px-4 py-8">
@@ -29,6 +29,6 @@ export default function Home() {
       </div>
 
       <NewsletterSection />
-    </div>
+    </main>
   );
 }

@@ -1,9 +1,38 @@
-import React from 'react'
+import React, { useState } from "react";
+import { utils, writeFile } from "xlsx";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function CsvToExcel() {
+  const [csvInput, setCsvInput] = useState("");
+
+  const handleConvert = () => {
+    if (!csvInput) return;
+
+    const rows = csvInput.split("\n").map((row) => row.split(","));
+    const worksheet = utils.aoa_to_sheet(rows);
+    const workbook = utils.book_new();
+    utils.book_append_sheet(workbook, worksheet, "Sheet1");
+
+    writeFile(workbook, "converted.xlsx");
+  };
+
   return (
-    <div>
-      
+    <div className="max-w-2xl mx-auto p-6 bg-gray-900 text-white rounded-lg shadow-md text-center">
+      <h2 className="text-xl font-bold mb-4">CSV to Excel Converter</h2>
+      <Textarea
+        className="w-full p-2 mb-4 bg-gray-800 border border-gray-700 rounded"
+        rows="6"
+        placeholder="Enter CSV data here..."
+        value={csvInput}
+        onChange={(e) => setCsvInput(e.target.value)}
+      />
+      <Button
+        className="w-full bg-blue-600 hover:bg-blue-700"
+        onClick={handleConvert}
+      >
+        Convert to Excel
+      </Button>
     </div>
-  )
+  );
 }

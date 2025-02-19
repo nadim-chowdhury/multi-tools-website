@@ -1,9 +1,8 @@
-import React from 'react'
-
-export default function MentalHealthChecker() {
+export function MentalHealthChecker() {
   return (
-    <div>
-      
+    <div className="p-4 bg-yellow-100 rounded-xl shadow-md">
+      <h2 className="text-xl font-semibold">Mental Health Checker</h2>
+      <p>Answer a few questions to assess your mental well-being.</p>
     </div>
-  )
+  );
 }
