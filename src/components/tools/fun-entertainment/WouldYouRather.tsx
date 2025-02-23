@@ -1,14 +1,16 @@
+import { Button } from "react-day-picker";
+
 export function WouldYouRather() {
-  const questions = [
-    "Would you rather be able to fly or be invisible?",
-    "Would you rather always have to sing or always have to dance?",
-    "Would you rather eat only pizza or only burgers for a year?",
-    "Would you rather travel to the past or the future?",
-  ];
-  const [question, setQuestion] = useState(null);
+  // const questions = [
+  //   "Would you rather be able to fly or be invisible?",
+  //   "Would you rather always have to sing or always have to dance?",
+  //   "Would you rather eat only pizza or only burgers for a year?",
+  //   "Would you rather travel to the past or the future?",
+  // ];
+  // const [question, setQuestion] = useState(null);
 
   const getQuestion = () => {
-    setQuestion(questions[Math.floor(Math.random() * questions.length)]);
+    // setQuestion(questions[Math.floor(Math.random() * questions.length)]);
   };
 
   return (
@@ -20,7 +22,7 @@ export function WouldYouRather() {
       >
         Generate Question
       </Button>
-      {question && <p className="mt-4 text-lg">{question}</p>}
+      {/* {question && <p className="mt-4 text-lg">{question}</p>} */}
     </div>
   );
 }

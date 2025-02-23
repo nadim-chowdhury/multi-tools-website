@@ -1,27 +1,29 @@
+"use client";
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+// import { Textarea } from "@/components/ui/textarea";
 
 export default function ExcelFormulaGenerator() {
   const [description, setDescription] = useState("");
-  const [formula, setFormula] = useState("");
+  // const [formula, setFormula] = useState("");
 
   const generateFormula = () => {
     if (!description) return;
 
     // Simple mapping of descriptions to formulas (this can be expanded or replaced with AI-powered suggestions)
-    const formulas = {
-      "sum column A": "=SUM(A:A)",
-      "average column B": "=AVERAGE(B:B)",
-      "count rows in column C": "=COUNTA(C:C)",
-      "max value in column D": "=MAX(D:D)",
-      "min value in column E": "=MIN(E:E)",
-    };
+    // const formulas = {
+    //   "sum column A": "=SUM(A:A)",
+    //   "average column B": "=AVERAGE(B:B)",
+    //   "count rows in column C": "=COUNTA(C:C)",
+    //   "max value in column D": "=MAX(D:D)",
+    //   "min value in column E": "=MIN(E:E)",
+    // };
 
-    setFormula(
-      formulas[description.toLowerCase()] || "No matching formula found"
-    );
+    // setFormula(
+    //   formulas[description.toLowerCase()] || "No matching formula found"
+    // );
   };
 
   return (
@@ -41,12 +43,12 @@ export default function ExcelFormulaGenerator() {
         Generate Formula
       </Button>
       <h3 className="text-lg font-semibold mt-4">Generated Formula:</h3>
-      <Textarea
+      {/* <Textarea
         className="w-full p-2 mt-2 bg-gray-800 border border-gray-700 rounded"
         rows="2"
         readOnly
         value={formula}
-      />
+      /> */}
     </div>
   );
 }

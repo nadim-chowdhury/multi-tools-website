@@ -1,12 +1,14 @@
+import { Button } from "@/components/ui/button";
+
 export function RandomJokeGenerator() {
-  const [joke, setJoke] = useState("");
+  // const [joke, setJoke] = useState("");
 
   const fetchJoke = async () => {
-    const response = await fetch(
-      "https://official-joke-api.appspot.com/random_joke"
-    );
-    const data = await response.json();
-    setJoke(`${data.setup} - ${data.punchline}`);
+    // const response = await fetch(
+    //   "https://official-joke-api.appspot.com/random_joke"
+    // );
+    // const data = await response.json();
+    // setJoke(`${data.setup} - ${data.punchline}`);
   };
 
   return (
@@ -18,7 +20,7 @@ export function RandomJokeGenerator() {
       >
         Get a Joke
       </Button>
-      {joke && <p className="mt-4 text-lg">{joke}</p>}
+      {/* {joke && <p className="mt-4 text-lg">{joke}</p>} */}
     </div>
   );
 }

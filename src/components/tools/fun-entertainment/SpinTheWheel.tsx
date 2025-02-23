@@ -1,16 +1,18 @@
+import { Button } from "@/components/ui/button";
+
 export function SpinTheWheel() {
-  const options = [
-    "Win",
-    "Lose",
-    "Try Again",
-    "Jackpot",
-    "Better Luck Next Time",
-  ];
-  const [result, setResult] = useState(null);
+  // const options = [
+  //   "Win",
+  //   "Lose",
+  //   "Try Again",
+  //   "Jackpot",
+  //   "Better Luck Next Time",
+  // ];
+  // const [result, setResult] = useState(null);
 
   const spinWheel = () => {
-    const randomIndex = Math.floor(Math.random() * options.length);
-    setResult(options[randomIndex]);
+    // const randomIndex = Math.floor(Math.random() * options.length);
+    // setResult(options[randomIndex]);
   };
 
   return (
@@ -22,7 +24,7 @@ export function SpinTheWheel() {
       >
         Spin
       </Button>
-      {result && <p className="mt-4 text-lg">Result: {result}</p>}
+      {/* {result && <p className="mt-4 text-lg">Result: {result}</p>} */}
     </div>
   );
 }

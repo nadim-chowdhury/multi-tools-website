@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
-import { Bar } from "react-chartjs-2";
+// import { Bar } from "react-chartjs-2";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -24,7 +26,7 @@ ChartJS.register(
 export default function ChartMaker() {
   const [labels, setLabels] = useState("");
   const [values, setValues] = useState("");
-  const [chartData, setChartData] = useState(null);
+  // const [chartData, setChartData] = useState(null);
 
   const handleGenerateChart = () => {
     const labelArray = labels.split(",").map((label) => label.trim());
@@ -35,16 +37,16 @@ export default function ChartMaker() {
       return;
     }
 
-    setChartData({
-      labels: labelArray,
-      datasets: [
-        {
-          label: "Dataset",
-          data: valueArray,
-          backgroundColor: "rgba(75, 192, 192, 0.5)",
-        },
-      ],
-    });
+    // setChartData({
+    //   labels: labelArray,
+    //   datasets: [
+    //     {
+    //       label: "Dataset",
+    //       data: valueArray,
+    //       backgroundColor: "rgba(75, 192, 192, 0.5)",
+    //     },
+    //   ],
+    // });
   };
 
   return (
@@ -70,11 +72,11 @@ export default function ChartMaker() {
       >
         Generate Chart
       </Button>
-      {chartData && (
+      {/* {chartData && (
         <div className="mt-6">
           <Bar data={chartData} />
         </div>
-      )}
+      )} */}
     </div>
   );
 }

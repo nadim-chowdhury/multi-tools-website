@@ -1,6 +1,16 @@
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+
 export function RandomCharacterGenerator() {
-  const characters = ["Knight", "Elf Archer", "Cyber Ninja", "Alien Overlord"];
-  const [character, setCharacter] = useState(null);
+  const characters: string[] = [
+    "Knight",
+    "Elf Archer",
+    "Cyber Ninja",
+    "Alien Overlord",
+  ];
+  const [character, setCharacter] = useState<string | null>(null);
 
   const generateCharacter = () => {
     setCharacter(characters[Math.floor(Math.random() * characters.length)]);

@@ -1,8 +1,11 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
 export function ZipExtractor() {
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
 
   const handleExtract = () => {
-    if (!file) return;
+    // if (!file) return;
     alert("ZIP extraction requires an external tool or API.");
   };
 
@@ -12,7 +15,7 @@ export function ZipExtractor() {
       <Input
         type="file"
         accept=".zip"
-        onChange={(e) => setFile(e.target.files[0])}
+        // onChange={(e) => setFile(e.target.files[0])}
         className="mb-4"
       />
       <Button

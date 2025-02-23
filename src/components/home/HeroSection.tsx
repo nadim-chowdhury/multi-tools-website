@@ -1,21 +1,25 @@
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="bg-gray-100 py-20">
-      <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Welcome to Multi-Tools
+    <section className="relative flex flex-col items-center justify-center text-center py-32 px-6 bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-xl">
+      <div className="max-w-3xl">
+        <h1 className="text-5xl font-extrabold text-white leading-tight drop-shadow-lg playwrite-it-moderna-font">
+          Empower Your Productivity with Multi-Tools
         </h1>
-        <p className="text-lg text-gray-700 mb-8">
-          Your one-stop solution for all your tool needs. Explore our wide range
-          of tools designed to make your tasks easier and more efficient.
+        <p className="text-lg text-white/90 mt-4">
+          Discover a powerful suite of tools designed to streamline your tasks
+          and enhance efficiency.
         </p>
-        <Link href="/tools">
-          <span className="bg-blue-500 text-white px-6 py-3 rounded-md text-lg hover:bg-blue-600 transition">
-            Browse Tools
-          </span>
-        </Link>
+
+        <div className="mt-8 playwrite-it-moderna-font">
+          <Link href="#allTools">
+            <Button className="bg-white hover:bg-violet-100 text-violet-600 rounded-full">
+              Browse Tools
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );

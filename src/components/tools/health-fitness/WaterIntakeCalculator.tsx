@@ -1,10 +1,18 @@
+"use client";
+
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
 export function WaterIntakeCalculator() {
-  const [weight, setWeight] = useState("");
-  const [intake, setIntake] = useState(null);
+  const [weight, setWeight] = useState<string>("");
+  const [intake, setIntake] = useState<number | null>(null);
 
   const calculateIntake = () => {
-    if (!weight) return;
-    setIntake((weight * 0.033).toFixed(2));
+    const weightNum = parseFloat(weight);
+    if (!weightNum || weightNum <= 0) return;
+
+    setIntake(parseFloat((weightNum * 0.033).toFixed(2)));
   };
 
   return (
@@ -15,7 +23,7 @@ export function WaterIntakeCalculator() {
         placeholder="Enter weight (kg)"
         value={weight}
         onChange={(e) => setWeight(e.target.value)}
-        className="mb-4"
+        className="mb-4 text-black"
       />
       <Button
         className="w-full bg-cyan-600 hover:bg-cyan-700"
@@ -23,7 +31,7 @@ export function WaterIntakeCalculator() {
       >
         Calculate
       </Button>
-      {intake && (
+      {intake !== null && (
         <p className="mt-4 text-lg">Recommended Intake: {intake} L/day</p>
       )}
     </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { utils, writeFile } from "xlsx";
 import { Button } from "@/components/ui/button";
@@ -22,7 +24,7 @@ export default function CsvToExcel() {
       <h2 className="text-xl font-bold mb-4">CSV to Excel Converter</h2>
       <Textarea
         className="w-full p-2 mb-4 bg-gray-800 border border-gray-700 rounded"
-        rows="6"
+        rows={6}
         placeholder="Enter CSV data here..."
         value={csvInput}
         onChange={(e) => setCsvInput(e.target.value)}

@@ -1,8 +1,14 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
 export function CrosswordPuzzleGenerator() {
   const [puzzle, setPuzzle] = useState(null);
 
   const generatePuzzle = () => {
-    setPuzzle("Generated crossword puzzle (Feature requires external API).");
+    // setPuzzle("Generated crossword puzzle (Feature requires external API).");
+    setPuzzle(null)
   };
 
   return (

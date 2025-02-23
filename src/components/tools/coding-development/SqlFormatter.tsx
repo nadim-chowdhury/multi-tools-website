@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
-import sqlFormatter from "sql-formatter";
+// import sqlFormatter from "sql-formatter";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -9,8 +11,9 @@ export default function SqlFormatter() {
 
   const handleFormat = () => {
     try {
-      setFormattedSql(sqlFormatter.format(sqlInput));
+      // setFormattedSql(sqlFormatter.format(sqlInput));
     } catch (error) {
+      console.log(" handleFormat ~ error:", error);
       setFormattedSql("Invalid SQL syntax");
     }
   };
@@ -20,7 +23,7 @@ export default function SqlFormatter() {
       <h2 className="text-xl font-bold mb-4">SQL Formatter</h2>
       <Textarea
         className="w-full p-2 mb-4 bg-gray-800 border border-gray-700 rounded"
-        rows="6"
+        rows={6}
         placeholder="Enter SQL query here..."
         value={sqlInput}
         onChange={(e) => setSqlInput(e.target.value)}
@@ -34,7 +37,7 @@ export default function SqlFormatter() {
       <h3 className="text-lg font-semibold mt-4">Formatted SQL:</h3>
       <Textarea
         className="w-full p-2 mt-2 bg-gray-800 border border-gray-700 rounded"
-        rows="6"
+        rows={6}
         readOnly
         value={formattedSql}
       />

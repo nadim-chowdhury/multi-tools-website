@@ -1,8 +1,11 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
 export function RarExtractor() {
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
 
   const handleExtract = () => {
-    if (!file) return;
+    // if (!file) return;
     alert("RAR extraction requires an external tool or API.");
   };
 
@@ -12,7 +15,7 @@ export function RarExtractor() {
       <Input
         type="file"
         accept=".rar"
-        onChange={(e) => setFile(e.target.files[0])}
+        // onChange={(e) => setFile(e.target.files[0])}
         className="mb-4"
       />
       <Button

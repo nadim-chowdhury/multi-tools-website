@@ -1,8 +1,14 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+// import { useState } from "react";
+
 export function Mp3ToFlac() {
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
 
   const handleConvert = () => {
-    if (!file) return;
+    // if (!file) return;
     alert("MP3 to FLAC conversion requires an external tool or API.");
   };
 
@@ -12,7 +18,7 @@ export function Mp3ToFlac() {
       <Input
         type="file"
         accept="audio/mp3"
-        onChange={(e) => setFile(e.target.files[0])}
+        // onChange={(e) => setFile(e.target.files[0])}
         className="mb-4"
       />
       <Button

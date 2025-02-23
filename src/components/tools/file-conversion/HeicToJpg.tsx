@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { utils, writeFile } from "xlsx";
+// import { Textarea } from "@/components/ui/textarea";
+// import { utils, writeFile } from "xlsx";
 
 export function HeicToJpg() {
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
 
   const handleConvert = () => {
-    if (!file) return;
+    // if (!file) return;
     alert("HEIC to JPG conversion requires an external tool or API.");
   };
 
@@ -18,7 +18,7 @@ export function HeicToJpg() {
       <Input
         type="file"
         accept="image/heic"
-        onChange={(e) => setFile(e.target.files[0])}
+        // onChange={(e) => setFile(e.target.files[0])}
         className="mb-4"
       />
       <Button

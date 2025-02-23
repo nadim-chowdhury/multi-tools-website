@@ -1,10 +1,18 @@
+"use client";
+
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
 export function StepsToDistanceConverter() {
-  const [steps, setSteps] = useState("");
-  const [distance, setDistance] = useState(null);
+  const [steps, setSteps] = useState<string>("");
+  const [distance, setDistance] = useState<number | null>(null);
 
   const convertStepsToDistance = () => {
-    if (!steps) return;
-    setDistance((steps * 0.0008).toFixed(2));
+    const stepsNum = parseInt(steps);
+    if (!stepsNum || stepsNum < 0) return;
+
+    setDistance(parseFloat((stepsNum * 0.0008).toFixed(2)));
   };
 
   return (
@@ -15,7 +23,7 @@ export function StepsToDistanceConverter() {
         placeholder="Enter steps"
         value={steps}
         onChange={(e) => setSteps(e.target.value)}
-        className="mb-4"
+        className="mb-4 text-black"
       />
       <Button
         className="w-full bg-yellow-600 hover:bg-yellow-700"
@@ -23,7 +31,9 @@ export function StepsToDistanceConverter() {
       >
         Convert
       </Button>
-      {distance && <p className="mt-4 text-lg">Distance: {distance} km</p>}
+      {distance !== null && (
+        <p className="mt-4 text-lg">Distance: {distance} km</p>
+      )}
     </div>
   );
 }

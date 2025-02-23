@@ -1,8 +1,11 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
 export function VideoToAudio() {
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
 
   const handleConvert = () => {
-    if (!file) return;
+    // if (!file) return;
     alert("Video to audio conversion requires an external tool or API.");
   };
 
@@ -12,7 +15,7 @@ export function VideoToAudio() {
       <Input
         type="file"
         accept="video/*"
-        onChange={(e) => setFile(e.target.files[0])}
+        // onChange={(e) => setFile(e.target.files[0])}
         className="mb-4"
       />
       <Button

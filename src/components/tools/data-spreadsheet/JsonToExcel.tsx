@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,6 +17,7 @@ export default function JsonToExcel() {
       utils.book_append_sheet(workbook, worksheet, "Sheet1");
       writeFile(workbook, "converted.xlsx");
     } catch (error) {
+      console.log(" handleConvert ~ error:", error);
       alert("Invalid JSON format");
     }
   };
@@ -24,7 +27,7 @@ export default function JsonToExcel() {
       <h2 className="text-xl font-bold mb-4">JSON to Excel Converter</h2>
       <Textarea
         className="w-full p-2 mb-4 bg-gray-800 border border-gray-700 rounded"
-        rows="6"
+        rows={6}
         placeholder="Enter JSON data here..."
         value={jsonInput}
         onChange={(e) => setJsonInput(e.target.value)}

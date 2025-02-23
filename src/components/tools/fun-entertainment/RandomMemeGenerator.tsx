@@ -1,10 +1,12 @@
+import { Button } from "@/components/ui/button";
+
 export function RandomMemeGenerator() {
-  const [meme, setMeme] = useState("");
+  // const [meme, setMeme] = useState("");
 
   const fetchMeme = async () => {
-    const response = await fetch("https://meme-api.com/gimme");
-    const data = await response.json();
-    setMeme(data.url);
+    // const response = await fetch("https://meme-api.com/gimme");
+    // const data = await response.json();
+    // setMeme(data.url);
   };
 
   return (
@@ -16,7 +18,7 @@ export function RandomMemeGenerator() {
       >
         Get a Meme
       </Button>
-      {meme && <img src={meme} alt="Random Meme" className="mt-4 rounded-lg" />}
+      {/* {meme && <img src={meme} alt="Random Meme" className="mt-4 rounded-lg" />} */}
     </div>
   );
 }

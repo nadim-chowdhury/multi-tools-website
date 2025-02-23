@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
-import QRCode from "qrcode.react";
+// import QRCode from "qrcode.react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -17,9 +19,9 @@ export default function QrCodeGenerator() {
         onChange={(e) => setText(e.target.value)}
       />
       <div className="flex justify-center mb-4">
-        {text && (
+        {/* {text && (
           <QRCode value={text} size={200} bgColor="#1a202c" fgColor="#ffffff" />
-        )}
+        )} */}
       </div>
       <Button
         className="w-full bg-blue-600 hover:bg-blue-700"

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,6 +19,7 @@ export default function JsonToCsv() {
         .join("\n");
       setCsvOutput(`${headers}\n${rows}`);
     } catch (error) {
+      console.log(" convertToCsv ~ error:", error);
       setCsvOutput("Invalid JSON input");
     }
   };
@@ -26,7 +29,7 @@ export default function JsonToCsv() {
       <h2 className="text-xl font-bold mb-4">JSON to CSV Converter</h2>
       <Textarea
         className="w-full p-2 mb-4 bg-gray-800 border border-gray-700 rounded"
-        rows="6"
+        rows={6}
         placeholder="Enter JSON array here..."
         value={jsonInput}
         onChange={(e) => setJsonInput(e.target.value)}
@@ -40,7 +43,7 @@ export default function JsonToCsv() {
       <h3 className="text-lg font-semibold mt-4">CSV Output:</h3>
       <Textarea
         className="w-full p-2 mt-2 bg-gray-800 border border-gray-700 rounded"
-        rows="6"
+        rows={6}
         readOnly
         value={csvOutput}
       />

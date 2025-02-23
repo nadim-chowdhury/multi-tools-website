@@ -1,9 +1,16 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+
 export function ChessMoveAnalyzer() {
   const [move, setMove] = useState("");
   const [analysis, setAnalysis] = useState(null);
 
   const analyzeMove = () => {
-    setAnalysis(`Analysis for move: ${move} (Feature requires external API).`);
+    // setAnalysis(`Analysis for move: ${move} (Feature requires external API).`);
+    setAnalysis(null)
   };
 
   return (

@@ -1,8 +1,14 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
 export function MinecraftSeedFinder() {
   const [seed, setSeed] = useState(null);
 
   const findSeed = () => {
-    setSeed(`Random Minecraft Seed: ${Math.floor(Math.random() * 100000000)}`);
+    // setSeed(`Random Minecraft Seed: ${Math.floor(Math.random() * 100000000)}`);
+    setSeed(null);
   };
 
   return (

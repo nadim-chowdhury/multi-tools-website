@@ -1,8 +1,10 @@
+import { Button } from "@/components/ui/button";
+
 export function OnlineDiceRoller() {
-  const [result, setResult] = useState(null);
+  // const [result, setResult] = useState(null);
 
   const rollDice = () => {
-    setResult(Math.floor(Math.random() * 6) + 1);
+    // setResult(Math.floor(Math.random() * 6) + 1);
   };
 
   return (
@@ -14,7 +16,7 @@ export function OnlineDiceRoller() {
       >
         Roll Dice
       </Button>
-      {result && <p className="mt-4 text-lg">You rolled a {result}!</p>}
+      {/* {result && <p className="mt-4 text-lg">You rolled a {result}!</p>} */}
     </div>
   );
 }

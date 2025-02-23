@@ -39,9 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased container mx-auto`}>
+      <body className={`${inter.variable} antialiased`}>
         <Header />
-        {children}
+        <div className="container mx-auto">{children}</div>
         <Footer />
       </body>
     </html>

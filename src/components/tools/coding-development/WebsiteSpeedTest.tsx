@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,10 +15,11 @@ export default function WebsiteSpeedTest() {
     try {
       // Simulating API call
       setTimeout(() => {
-        setResult({ loadTime: "1.2s", performance: "90%" });
+        // setResult({ loadTime: "1.2s", performance: "90%" });
         setLoading(false);
       }, 2000);
     } catch (error) {
+      console.log(" handleTestSpeed ~ error:", error)
       setResult(null);
       setLoading(false);
     }
@@ -42,8 +45,8 @@ export default function WebsiteSpeedTest() {
       {result && (
         <div className="mt-4 p-4 bg-gray-800 border border-gray-700 rounded">
           <h3 className="text-lg font-semibold">Results:</h3>
-          <p>Load Time: {result.loadTime}</p>
-          <p>Performance: {result.performance}</p>
+          {/* <p>Load Time: {result.loadTime}</p>
+          <p>Performance: {result.performance}</p> */}
         </div>
       )}
     </div>

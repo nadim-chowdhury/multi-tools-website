@@ -1,13 +1,27 @@
+"use client";
+
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
 export function SleepCycleCalculator() {
-  const [wakeTime, setWakeTime] = useState("");
-  const [suggestedTimes, setSuggestedTimes] = useState([]);
+  const [wakeTime, setWakeTime] = useState<string>("");
+  const [suggestedTimes, setSuggestedTimes] = useState<string[]>([]);
 
   const calculateSleepCycles = () => {
     if (!wakeTime) return;
-    const wakeHour = parseInt(wakeTime.split(":"));
-    const cycles = [9, 7.5, 6, 4.5].map(
-      (cycle) => `${(wakeHour - cycle + 24) % 24}:00`
-    );
+
+    const [wakeHour, wakeMinute] = wakeTime.split(":").map(Number);
+    if (isNaN(wakeHour) || isNaN(wakeMinute)) return;
+
+    const cycleDurations = [9, 7.5, 6, 4.5];
+    const cycles = cycleDurations.map((cycle) => {
+      const sleepHour = (wakeHour - cycle + 24) % 24;
+      return `${String(Math.floor(sleepHour)).padStart(2, "0")}:${String(
+        wakeMinute
+      ).padStart(2, "0")}`;
+    });
+
     setSuggestedTimes(cycles);
   };
 
@@ -18,7 +32,7 @@ export function SleepCycleCalculator() {
         type="time"
         value={wakeTime}
         onChange={(e) => setWakeTime(e.target.value)}
-        className="mb-4"
+        className="mb-4 text-black"
       />
       <Button
         className="w-full bg-blue-600 hover:bg-blue-700"

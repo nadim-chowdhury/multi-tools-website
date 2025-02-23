@@ -1,9 +1,11 @@
+import { Button } from "@/components/ui/button";
+
 export function TruthOrDareGenerator() {
-  const options = ["Truth", "Dare"];
-  const [result, setResult] = useState(null);
+  // const options = ["Truth", "Dare"];
+  // const [result, setResult] = useState(null);
 
   const getTruthOrDare = () => {
-    setResult(options[Math.floor(Math.random() * options.length)]);
+    // setResult(options[Math.floor(Math.random() * options.length)]);
   };
 
   return (
@@ -15,7 +17,7 @@ export function TruthOrDareGenerator() {
       >
         Generate
       </Button>
-      {result && <p className="mt-4 text-lg">{result}!</p>}
+      {/* {result && <p className="mt-4 text-lg">{result}!</p>} */}
     </div>
   );
 }

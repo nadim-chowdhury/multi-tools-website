@@ -1,14 +1,20 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
 export function EsportsTeamNameGenerator() {
-  const names = [
-    "Shadow Titans",
-    "Pixel Warriors",
-    "Cyber Phantoms",
-    "Glitch Raiders",
-  ];
+  // const names = [
+  //   "Shadow Titans",
+  //   "Pixel Warriors",
+  //   "Cyber Phantoms",
+  //   "Glitch Raiders",
+  // ];
   const [name, setName] = useState(null);
 
   const generateName = () => {
-    setName(names[Math.floor(Math.random() * names.length)]);
+    // setName(names[Math.floor(Math.random() * names.length)]);
+    setName(null)
   };
 
   return (
